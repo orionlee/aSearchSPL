@@ -11,6 +11,7 @@
         android:theme="@style/AppTheme">
 
         <activity android:name=".SearchProviderLaunchActivity"
+                  android:label="@string/app_short_name"
                   android:excludeFromRecents="true" >
             <intent-filter>
                 <action android:name="android.intent.action.SEND"/>
