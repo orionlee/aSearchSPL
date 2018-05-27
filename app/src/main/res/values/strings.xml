@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Search Text with Seattle Public Library</string>
     <string name="app_short_name">Search SPL</string>
+    <string name="web_search_label">Search Web</string>
 </resources>

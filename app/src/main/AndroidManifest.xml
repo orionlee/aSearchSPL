@@ -12,7 +12,8 @@
 
         <activity android:name=".SearchProviderLaunchActivity"
                   android:label="@string/app_short_name"
-                  android:excludeFromRecents="true" >
+                  android:excludeFromRecents="true"
+                  android:theme="@android:style/Theme.NoDisplay">
             <intent-filter>
                 <action android:name="android.intent.action.SEND"/>
                 <category android:name="android.intent.category.DEFAULT"/>
@@ -24,6 +25,27 @@
                 <data android:mimeType="text/plain" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".WebSearchProviderLaunchActivity"
+            android:label="@string/web_search_label"
+            android:excludeFromRecents="true"
+            android:theme="@android:style/Theme.NoDisplay"
+            android:icon="@mipmap/ic_websearch"
+            android:roundIcon="@mipmap/ic_websearch_round">
+            <intent-filter>
+                <!-- Use case: select text on some TextView, and users want to search the web
+                     with the selected text.
+                     On standard android platform, users can do so with browser / WebView, but not
+                     general TextView.
+                  -->
+                <action android:name="android.intent.action.SEND"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="text/plain"/>
+            </intent-filter>
+            <!-- Do not expose PROCESS_TEXT as it will get confused with Standard Web search when
+                 in a browser / WebView -->
+        </activity>
+
     </application>
 
 </manifest>
