@@ -1,0 +1,27 @@
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:shortcutId="checked_out"
+        android:enabled="true"
+        android:icon="@mipmap/ic_launcher_round"
+        android:shortcutShortLabel="@string/spl_checked_out_label"
+        android:shortcutLongLabel="@string/spl_checked_out_label">
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetPackage="net.oldev.asearchproviders"
+            android:targetClass="net.oldev.asearchproviders.LaunchSPLCheckedOutActivity" />
+        <!-- If your shortcut is associated with multiple intents, include them
+             here. The last intent in the list determines what the user sees when
+             they launch this shortcut. -->
+    </shortcut>
+    <shortcut
+        android:shortcutId="holds"
+        android:enabled="true"
+        android:icon="@mipmap/ic_launcher_round"
+        android:shortcutShortLabel="@string/spl_holds_label"
+        android:shortcutLongLabel="@string/spl_holds_label">
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetPackage="net.oldev.asearchproviders"
+            android:targetClass="net.oldev.asearchproviders.LaunchSPLHoldsActivity" />
+    </shortcut>
+</shortcuts>

@@ -1,5 +1,7 @@
 <resources>
-    <string name="app_name">Search Text with Seattle Public Library</string>
-    <string name="app_short_name">Search SPL</string>
+    <string name="app_name">Seattle Public Library Companion</string>
+    <string name="spl_search_label">Search SPL</string>
+    <string name="spl_checked_out_label">SPL Checked Out</string>
+    <string name="spl_holds_label">SPL Holds</string>
     <string name="web_search_label">Search Web</string>
 </resources>

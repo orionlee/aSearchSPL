@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="net.oldev.asearchproviders">
+    package="net.oldev.asearchproviders">
 
     <application
         android:allowBackup="true"
@@ -9,43 +9,72 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <activity android:name=".SearchProviderLaunchActivity"
-                  android:label="@string/app_short_name"
-                  android:excludeFromRecents="true"
-                  android:theme="@android:style/Theme.NoDisplay">
+        <activity
+            android:name=".SearchProviderLaunchActivity"
+            android:excludeFromRecents="true"
+            android:label="@string/spl_search_label"
+            android:theme="@android:style/Theme.NoDisplay">
             <intent-filter>
-                <action android:name="android.intent.action.SEND"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <data android:mimeType="text/plain"/>
+                <action android:name="android.intent.action.SEND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="text/plain" />
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.PROCESS_TEXT" />
+
                 <category android:name="android.intent.category.DEFAULT" />
+
                 <data android:mimeType="text/plain" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".WebSearchProviderLaunchActivity"
-            android:label="@string/web_search_label"
+        <activity
+            android:name=".WebSearchProviderLaunchActivity"
             android:excludeFromRecents="true"
-            android:theme="@android:style/Theme.NoDisplay"
             android:icon="@mipmap/ic_websearch"
-            android:roundIcon="@mipmap/ic_websearch_round">
+            android:label="@string/web_search_label"
+            android:roundIcon="@mipmap/ic_websearch_round"
+            android:theme="@android:style/Theme.NoDisplay">
             <intent-filter>
-                <!-- Use case: select text on some TextView, and users want to search the web
+
+                <!--
+                     Use case: select text on some TextView, and users want to search the web
                      with the selected text.
                      On standard android platform, users can do so with browser / WebView, but not
                      general TextView.
-                  -->
-                <action android:name="android.intent.action.SEND"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <data android:mimeType="text/plain"/>
-            </intent-filter>
-            <!-- Do not expose PROCESS_TEXT as it will get confused with Standard Web search when
-                 in a browser / WebView -->
-        </activity>
+                -->
+                <action android:name="android.intent.action.SEND" />
 
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+            <!--
+                 Do not expose PROCESS_TEXT as it will get confused with Standard Web search when
+                 in a browser / WebView
+            -->
+        </activity>
+        <activity android:name=".LaunchSPLCheckedOutActivity"
+            android:label="@string/spl_checked_out_label"
+            android:theme="@android:style/Theme.NoDisplay">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <meta-data android:name="android.app.shortcuts"
+                android:resource="@xml/shortcuts" />
+        </activity>
+        <activity android:name=".LaunchSPLHoldsActivity"
+            android:label="@string/spl_holds_label"
+            android:theme="@android:style/Theme.NoDisplay">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <meta-data android:name="android.app.shortcuts"
+                android:resource="@xml/shortcuts" />
+        </activity>
     </application>
 
 </manifest>
